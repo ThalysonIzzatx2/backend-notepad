@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require('custom-env').env();
 
 const mongoUrl = process.env.MGDB_URL;
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 mongoose.set('useCreateIndex', true)
 mongoose.connect(
