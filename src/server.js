@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 require('custom-env').env();
 
 const mongoUrl = process.env.MGDB_URL;
+const port = process.env.PORT || 8080;
 
 mongoose.set('useCreateIndex', true)
 mongoose.connect(
@@ -18,6 +19,6 @@ app.use(express.json());
 app.use(cors());
 app.use(require('./routes'));
 
-app.listen(8081, ()=>{
-    console.log("server is on in port : 8081");
+app.listen(port, ()=>{
+    console.log(port);
 });
