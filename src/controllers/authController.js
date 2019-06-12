@@ -10,10 +10,6 @@ const generateToken = (param = {}) => {
 };
 
 module.exports = {
-
-     async index (req, res) {
-        res.send({hello:"world"});
-    },
      async register (req, res) {
 
         const { email } = req.body;
