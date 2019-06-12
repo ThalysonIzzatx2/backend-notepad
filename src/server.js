@@ -4,12 +4,11 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('custom-env').env();
 
-const mongoUser = process.env.MGDB_USER;
-const mongoPass = process.env.MGDB_PASS;
+const mongoUrl = process.env.MGDB_URL;
 
 mongoose.set('useCreateIndex', true)
 mongoose.connect(
-    `mongodb://${mongoUser}:${mongoPass}@ds231387.mlab.com:31387/chat`,
+    mongoUrl,
     {
         useNewUrlParser: true,
     }
