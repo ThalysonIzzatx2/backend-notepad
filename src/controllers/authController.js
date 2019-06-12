@@ -1,8 +1,7 @@
 if (process.env.NODE_ENV !== 'production') require('custom-env').env();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const path = require("path");
-const User = require('../models/User');
+const User = require('../models/user');
 
 const generateToken = (param = {}) => {
     return jwt.sign(param, process.env.SECRET_KEY,{
@@ -11,6 +10,9 @@ const generateToken = (param = {}) => {
 };
 
 module.exports = {
+    async index (req, res) {
+        res.send({Hello:"friend"});
+    },
      async register (req, res) {
 
         const { email } = req.body;
