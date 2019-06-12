@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-require('custom-env').env();
+if (process.env.NODE_ENV !== 'production') require('custom-env').env();
 
 //Middleware for verifying jwt
 

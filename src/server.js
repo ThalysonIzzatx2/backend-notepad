@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('custom-env').env();
+if (process.env.NODE_ENV !== 'production') require('custom-env').env();
 
 const mongoUrl = process.env.MGDB_URL;
 const port = process.env.PORT || 8081;

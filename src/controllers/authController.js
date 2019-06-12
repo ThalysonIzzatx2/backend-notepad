@@ -1,4 +1,4 @@
-require('custom-env').env();
+if (process.env.NODE_ENV !== 'production') require('custom-env').env();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
