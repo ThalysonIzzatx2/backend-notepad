@@ -1,7 +1,8 @@
 if (process.env.NODE_ENV !== 'production') require('custom-env').env();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const path = require("path");
+const User = require('../models/User');
 
 const generateToken = (param = {}) => {
     return jwt.sign(param, process.env.SECRET_KEY,{
