@@ -5,6 +5,7 @@ const noteController = require('./controllers/noteController');
 
 const routes = express.Router();
 
+routes.get('/', AuthController.index);
 routes.post('/register', AuthController.register );
 routes.post('/login', AuthController.login );
 routes.get('/notes', authMiddle ,noteController.getNotes );

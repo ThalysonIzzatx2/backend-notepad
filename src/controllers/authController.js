@@ -10,6 +10,10 @@ const generateToken = (param = {}) => {
 };
 
 module.exports = {
+
+     async index (req, res) {
+        res.send({hello:"world"});
+    },
      async register (req, res) {
 
         const { email } = req.body;
@@ -39,12 +43,10 @@ module.exports = {
     
         if(!user)
             return res.status(400).send({error:'user not found'});
-    
         if(!await bcrypt.compare(password, user.password))
             return res.status(400).send({error:'invalid password'});
     
         user.password = undefined;
-    
         res.send({
             user,
             token:generateToken({id:user.id}),
